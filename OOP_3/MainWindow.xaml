@@ -1,0 +1,35 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_3"
+        xmlns:WindowsPresentation="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" x:Class="OOP_3.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="459" Width="798.49">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="408" VerticalAlignment="Top" Width="588" Margin="10,10,0,0">
+            <WindowsPresentation:GMapControl Name="Map" Loaded="MapLoaded" MouseLeftButtonDown="Map_MouseLeftButtonDown"/>
+
+        </Grid>
+        <RadioButton x:Name="objectCreate" Content="Создание объектов" HorizontalAlignment="Left" Height="20" Margin="603,33,0,0" VerticalAlignment="Top" Width="158"/>
+        <RadioButton x:Name="objSearch" Content="Поиск ближайших объектов" HorizontalAlignment="Left" Height="20" Margin="603,53,0,0" VerticalAlignment="Top" Width="177"/>
+        <ComboBox x:Name="objSelect" HorizontalAlignment="Left" Height="24" Margin="613,98,0,0" VerticalAlignment="Top" Width="148" SelectedIndex="0">
+            <ComboBoxItem Content="Место" HorizontalAlignment="Left" Width="129"/>
+            <ComboBoxItem Content="Машина" HorizontalAlignment="Left" Width="129"/>
+            <ComboBoxItem Content="Человек" HorizontalAlignment="Left" Width="129"/>
+            <ComboBoxItem Content="Маршрут" HorizontalAlignment="Left" Width="146"/>
+            <ComboBoxItem Content="Область" HorizontalAlignment="Left" Width="146"/>
+        </ComboBox>
+        <TextBox x:Name="objName" HorizontalAlignment="Left" Height="20" Margin="613,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
+        <Button Content="ОК" HorizontalAlignment="Left" Height="25" Margin="613,152,0,0" VerticalAlignment="Top" Width="148" Click="Button_Click"/>
+        <Button Content="Сброс точек" HorizontalAlignment="Left" Height="25" Margin="613,182,0,0" VerticalAlignment="Top" Width="148" Click="Button_Click_1"/>
+        <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="20" Margin="613,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
+        <Button x:Name="Search_Apply" Content="OK" HorizontalAlignment="Left" Height="25" Margin="613,256,0,0" VerticalAlignment="Top" Width="148" Click="Search_Apply_Click"/>
+        <Label Content="Результаты поиска" HorizontalAlignment="Left" Height="32" Margin="613,286,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Найти" HorizontalAlignment="Left" Height="30" Margin="613,210,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Добавить" HorizontalAlignment="Left" Height="30" Margin="613,73,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Режим курсора" HorizontalAlignment="Left" Height="34" Margin="613,10,0,0" VerticalAlignment="Top" Width="114"/>
+        <ListBox x:Name="searchResult" HorizontalAlignment="Left" Height="109" Margin="613,309,0,0" VerticalAlignment="Top" Width="148" SelectionChanged="searchResult_SelectionChanged"/>
+    </Grid>
+</Window>
