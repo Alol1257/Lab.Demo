@@ -29,9 +29,6 @@ namespace OOP_3
 
         public override double getDistance(PointLatLng point)
         {
-            //GeoCoordinate c1 = new GeoCoordinate(points[0].Lat, points[0].Lng);
-            //GeoCoordinate c2 = new GeoCoordinate(points[points.Count].Lat, points[points.Count].Lng);
-
             GeoCoordinate c1 = new GeoCoordinate(point.Lat, point.Lng);
             GeoCoordinate c2 = new GeoCoordinate(points[0].Lat, points[0].Lng);
 
@@ -41,6 +38,11 @@ namespace OOP_3
         public override PointLatLng getFocus()
         {
             return points[0];
+        }
+
+        public List<PointLatLng> getPoints()
+        {
+            return points;
         }
 
         public override GMapMarker getMarker()

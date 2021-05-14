@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="459" Width="798.49">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="408" VerticalAlignment="Top" Width="588" Margin="10,10,0,0">
+        <Grid HorizontalAlignment="Left" Height="320" VerticalAlignment="Top" Width="588" Margin="10,98,0,0">
             <WindowsPresentation:GMapControl Name="Map" Loaded="MapLoaded" MouseLeftButtonDown="Map_MouseLeftButtonDown"/>
 
         </Grid>

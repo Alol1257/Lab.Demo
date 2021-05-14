@@ -43,7 +43,7 @@ namespace OOP_3
                     Width = 32,
                     Height = 32,
                     ToolTip = this.getTitle(),
-                    Source = new BitmapImage(new Uri("C:/Users/user/Desktop/OOP_3-master/OOP_3/icons/Location.png"))
+                    Source = new BitmapImage(new Uri("C:/Users/user/Desktop/Lab.Demo/OOP_3/icons/Location.png")) // путь к пикче, но из за этого на др пк не работает из за разных путей
                 }
             };
 

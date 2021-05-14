@@ -30,6 +30,9 @@ namespace OOP_3
         private List<PointLatLng> points = new List<PointLatLng>();
         private PointLatLng point;
 
+        //private Human human;
+        //private Car car;
+
         private void MapLoaded(object sender, RoutedEventArgs e)
         {
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
@@ -52,7 +55,7 @@ namespace OOP_3
 
             points.Add(point);
 
-            foreach(MapObject obj in objectsCopy)
+            foreach (MapObject obj in objectsCopy)
             {
                 if (objSearch.IsChecked == true && obj.getDistance(point) <= 500)
                 {
@@ -87,7 +90,7 @@ namespace OOP_3
                     break;
             }
 
-            //Удаляем для адекватной отрисовки маршрута и области, ибо неведомая херня при неудаленных поинтах отрисуется
+            //Удаляем для адекватной отрисовки маршрута и области, ибо херня при неудаленных поинтах отрисуется
             points.Clear(); 
 
             if (objectCreate.IsChecked == true)
@@ -108,11 +111,14 @@ namespace OOP_3
             Map.Markers.Clear();
             objectsCopy.Clear();
             searchResult.Items.Clear();
+            searchBox.Clear();
+            objName.Clear();
         }
 
+        //Фокусировка будет на последнем созданном объекте, если тайтлы нескольких обьектов совпадают
         private void Search_Apply_Click(object sender, RoutedEventArgs e)
         {
-            foreach(MapObject obj in objectsCopy)
+            foreach (MapObject obj in objectsCopy)
             {
                 if (searchBox.Text == obj.getTitle())
                 {
@@ -126,7 +132,7 @@ namespace OOP_3
         {
             foreach (MapObject obj in objectsCopy)
             {
-                if (obj.getTitle() == searchResult.SelectedItem.ToString())
+                if (objectsCopy.IndexOf(obj) == searchResult.SelectedIndex)
                     Map.Position = obj.getFocus();
             }
         }
